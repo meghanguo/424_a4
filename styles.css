@@ -1,0 +1,28 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "viz2 viz4";
+    gap: 10px;
+    max-width: 1000px; /* This property will ensure that the grid container doesn't exceed 1000px in width */
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #vis1 {
+grid-area: viz1;
+} */
+
+#vis2 {
+    grid-area: viz2;
+}
+
+/* #vis3 {
+grid-area: viz3;
+} */
+
+#vis4 {
+    grid-area: viz4;
+}
