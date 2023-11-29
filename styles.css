@@ -1,28 +1,16 @@
-
-.grid {
+/* .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "viz2 viz4";
+        "viz3";
     gap: 10px;
+    width: 1000px;
     max-width: 1000px; /* This property will ensure that the grid container doesn't exceed 1000px in width */
-    margin: 0 auto;
+    /* margin: 0 auto;
     justify-content: center;
     align-items: center;
-}
-
-/* #vis1 {
-grid-area: viz1;
 } */
 
-#vis2 {
-    grid-area: viz2;
-}
-
-/* #vis3 {
-grid-area: viz3;
-} */
-
-#vis4 {
-    grid-area: viz4;
+.drop-shadow {
+    box-shadow: 5px 5px 10px rgba(50, 49, 49, 0.2);
 }
