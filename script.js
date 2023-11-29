@@ -10,6 +10,8 @@ const fetchAllJSON = async () => {
   const data6 = await fetch('plot6_data.json').then(response => response.json());
   const data7 = await fetch('plot7_data.json').then(response => response.json());
   const data8  = await fetch('plot8_data.json').then(response => response.json());
+  const neighborhood_gdf = await fetch('Boundaries - Neighborhoods.geojson');
+  const geojson = await neighborhood_gdf.json();
 
 
   const spec1 = {
@@ -332,6 +334,39 @@ const fetchAllJSON = async () => {
     }
   };
 document.getElementById('attributes').addEventListener('change', updateSelectedOption);
+
+const spec7 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json",
+  "width": 500,
+  "height": 300,
+  "data": {"values": geojson, "format": {"property": "features"}},
+  "projection": {"type": "mercator"},
+  "mark": {"type":"geoshape", "stroke": "#757575", "strokeWidth": 0.5}, 
+  "transform": [
+      {
+          "lookup": "properties.sec_neigh",
+          "from": {
+              "data": {"url": "violations_neigh.json"},
+              "key": "sec_neigh",
+              "fields": ["sec_neigh", "Violations"],
+          }
+      }
+  ],
+  "encoding": {
+      "color": {
+          "field": "Violations",
+          "type": "quantitative",
+          "scale": {"scheme": "Oranges"},
+          "legend": {"title": "# violations"}
+      },
+      "tooltip": [
+          {"field": "properties.sec_neigh", "type": "nominal", "title": "Neighborhood"},
+          {"field": "Violations", "type": "quantitative", "title": "# Violations"}
+      ]
+  }
+};
+
+vegaEmbed("#vis7", spec7);
 
 }
 fetchAllJSON();
