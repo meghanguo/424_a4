@@ -122,7 +122,7 @@ const fetchAllJSON = async () => {
           tooltip: {field: "VIOLATIONS", aggregate: "sum"},
         },
         title: {text: "Speed Violations by Neighborhood", fontSize: 14},
-        width: 900
+        width: 2000
       },
       {
         transform: [{filter: {selection: "click"}}],
@@ -135,7 +135,7 @@ const fetchAllJSON = async () => {
             tooltip: {field: "VIOLATIONS", aggregate: "sum"}
         },
         title: {text: "Speed Violations over the Years", fontSize: 14},
-        width: 900
+        width: 2000
       }
     ]
   };
