@@ -75,5 +75,6 @@
                     {"sec_neigh": "WEST PULLMAN", "Violations": 575879.0},
                     {"sec_neigh": "WEST RIDGE", "Violations": 385888.0},
                     {"sec_neigh": "WICKER PARK,WEST TOWN", "Violations": 449132.0},
-                    {"sec_neigh": "WOODLAWN", "Violations": 0.0}
+                    {"sec_neigh": "WOODLAWN", "Violations": 0.0},
+                    {"sec_neigh": "WRIGLEYVILLE", "Violations": 0.0}
                 ]

@@ -335,8 +335,8 @@ document.getElementById('attributes').addEventListener('change', updateSelectedO
 
 const spec7 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
-  "height": 300,
+  "width": 700,
+  "height": 500,
   "data": {"values": geojson, "format": {"property": "features"}},
   "projection": {"type": "mercator"},
   "mark": {"type":"geoshape", "stroke": "#757575", "strokeWidth": 0.5}, 
@@ -361,7 +361,8 @@ const spec7 = {
           {"field": "properties.sec_neigh", "type": "nominal", "title": "Neighborhood"},
           {"field": "Violations", "type": "quantitative", "title": "# Violations"}
       ]
-  }
+  },
+  title: {text: 'Violations by Neighborhood', fontSize: 16},
 };
 
 vegaEmbed("#vis7", spec7);
